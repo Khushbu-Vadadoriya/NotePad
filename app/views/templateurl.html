@@ -1,0 +1,27 @@
+<div class="container ">
+    <div class="row header">
+        <div class="col-1">
+            <a href="#" ng-click="newNote()"><img src="https://img.icons8.com/android/24/000000/plus.png"></a>
+        </div>
+        <div class="col">
+            <h1 class="title">My Awesome Notepad</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <div class="note-area">
+                <ul>
+                    <li ng-repeat="note in notes|orderBy:'id'">
+                        <a href="#" ng-click="openEditor(note.id)">{{note.title}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <div id="editor" class="note-area" contenteditable="true" ng-bind="noteText"></div>
+            <a href="#" ng-click="save()" ng-show="editMode" id="save">Save</a>
+        </div>
+    </div>
+</div>
